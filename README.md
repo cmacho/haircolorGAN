@@ -6,6 +6,8 @@ We implement a variation of the cycleGAN architecture (described in [this paper]
 
 <img src="imgs/multiple_colors_architecture.png" width="800px"/>
 
+For more details see my [project report](https://cs230.stanford.edu/past-projects/) and [poster](https://cs230.stanford.edu/past-projects/) for the Stanford CS230 class. (hyperlinks to be updated.)
+
 Specifically I have added the following files:
 
 - [haircolor_gan_model.py](models/haircolor_gan_model.py) - - implements the haircolorGAN model
