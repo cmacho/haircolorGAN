@@ -1,7 +1,7 @@
 
 # haircolorGAN
 
-We implement a variation of the cycleGAN architecture for changing between multiple hair colors. We build on the PyTorch implementation of pix2pix and cycleGAN at [pytorch-cycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). The modified cycleGAN architecture is sketched in the following diagram. 
+We implement a variation of the cycleGAN architecture that allows changing between multiple hair colors in portrait images. We build on the PyTorch implementation of pix2pix and cycleGAN at [pytorch-cycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). The modified cycleGAN architecture is sketched in the following diagram. 
 
 
 <img src="imgs/multiple_colors_architecture.png" width="800px"/>
