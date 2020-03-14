@@ -12,7 +12,7 @@ Specifically I have added the following files:
 
 - [haircolor_gan_model.py](models/haircolor_gan_model.py) - - implements the haircolorGAN model
 - [hair_dataset.py](data/hair_dataset.py) - - data loader to load images and target hair colors for training
-- [hair_testmode_dataset.py](data/hair_testmode.py) - - data loader for testing with specific pairs of (image,target hair color)
+- [hair_testmode_dataset.py](data/hair_testmode_dataset.py) - - data loader for testing with specific pairs of (image,target hair color)
 - [hair_list_A.json](datasets/haircolor/hair_list_A.json), [hair_list_B.json](datasets/haircolor/hair_list_B.json) - - these contain hair color labels for images from the [CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ) dataset which is used for training. The hair color labels were computed using the masks that are provided with the dataset.
 
 I have also made modifications to the following files:
