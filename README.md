@@ -25,7 +25,7 @@ For more information on the code structure consider reading the [Readme of the o
 
 ### Preparing the data
 
-We use the [CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ) dataset for training. Download the dataset by following the hyperlink. The dataset contains 30.000 images of celebrities. Please rescale all of these images so that they have a resolution of 256x256. Make sure that the filenames are 0.jpg, 1.jpg, 2.jpg etc. Then place the images in [datasets/haircolor/images](datasets/haircolor/images). I have included three example images in that directory. 
+We use the [CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ) dataset for training. Download the dataset by following the hyperlink. The dataset contains 30.000 images of celebrities. Please rescale all of these images so that they have a resolution of 256x256. Make sure that the filenames are 0.jpg, 1.jpg, 2.jpg etc. Then (after cloning this repo) place the images in [datasets/haircolor/images](datasets/haircolor/images). I have included three example images in that directory. 
 
 ### Training
 
