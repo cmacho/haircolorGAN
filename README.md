@@ -4,7 +4,7 @@
 We implement a variation of the cycleGAN architecture (described in [this paper](https://arxiv.org/pdf/1703.10593.pdf)) that allows changing between multiple hair colors in portrait images. We build on the [PyTorch implementation of pix2pix and cycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by [Jun-Yan Zhu](https://github.com/junyanz), [Taesung Park](https://github.com/taesung) and [Tongzhou Wang](https://ssnl.github.io/). The modified cycleGAN architecture is sketched in the following diagram. 
 
 
-<img src="imgs/multiple_colors_architecture.png" width="800px"/>
+<img src="imgs/multiple_colors_architecture_v2.png" width="800px"/>
 
 For more details see my [project report](https://cs230.stanford.edu/past-projects/) and [poster](https://cs230.stanford.edu/past-projects/) for the Stanford CS230 class. (hyperlinks to be updated.)
 
