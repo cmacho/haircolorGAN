@@ -606,7 +606,7 @@ class SigmoidDiscriminator(nn.Module):
             ndf (int)       -- the number of filters in the last conv layer
             n_layers (int)  -- the number of conv layers in the discriminator
         """
-        super(NLayerDiscriminator, self).__init__()
+        super(SigmoidDiscriminator, self).__init__()
         use_bias = True
 
         kw = 4
