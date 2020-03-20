@@ -47,8 +47,35 @@ Some of the options you may want to change:
 
 To see intermediate results during training, have a look at `./checkpoints/experiment1/web/index.html`.
 
+### Testing with your own choice of images and target hair colors
+
+To test your trained model with your own choice of images and target hair colors, you need to populate a directory `./datasets/haircolor_test/test` with image pairs of the following form. Each image is of size 256x512 pixels. The leftmost 256x256 pixels contain your input image. The other pixels on the right are in the target hair color. Here is an example:
+
+<img src="imgs/aligned_example.jpg" width="256px"/>
+
+This is the same format that is used for the input data of the [pix2pix](models/pix2pix_model.py) model. The authors have provided the script `datasets/combine_A_and_B.py` to help us prepare our data like this. To use it, create directories `./datasets/haircolor_test/A/test` and `./datasets/haircolor_test/B/test`. Put your input images (of resolution 256x256) into  `./datasets/haircolor_test/A/test` and your target hair colors (which need to be images of size 256x256, like the right half of the above example) into `./datasets/haircolor_test/B/test`. The file names of each input image and the corresponding target hair color that you want to use with it have to be the same, e.g. the target hair color for `./datasets/haircolor_test/A/test/1.jpg` is `./datasets/haircolor_test/B/test/1.jpg`. Then navigate to the directory  `./datasets` and run 
+```bash
+python combine_A_and_B.py --fold_A haircolor_test/A --fold_B haircolor_test/B --fold_AB haircolor_test
+```
+This will create the folder `haircolor_test/test` and fill it with the combined images.
+
+After having prepared your data like this, run `test.py` like this:
+```bash
+python test.py --model haircolor_gan --dataroot datasets/haircolor_test --dataset_mode hair_testmode --eval --name experiment1
+```
+You may want to adjust the options `--netG`, `--no_dropout` and `--norm` to match your generator model that you have trained. You can also use the `--epoch` option to load a model from an earlier epoch during training, if it has been saved in `./checkpoints/experiment1`.
+
+You will see the results in the directory `./results/experiment1/test_latest`. Or, if you have specified a value for `--epoch` then the word `latest` will be replaced by that value.
+
+Feel free to also use a different name than `haircolor_test` for the directory that contains the data. We only used the name `haircolor_test` as an example throughout this section. 
 
 
-### Testing / Using trained model to translate hair colors
+### Testing with a pre-defined test subset of CelebAMask-HQ
 
-TODO: write this section
+Alternatively you can use the default data loader ([hair_dataset.py](data/hair_dataset.py)) also with `test.py`. During training, it uses only the first 12.000 images of each of `datasets/haircolor/hair_list_A.json` and `datasets/haircolor/hair_list_B.json`. You can test with the remaining approximately 2.000 images in `datasets/haircolor/hair_list_A.json` by running
+
+```bash
+python test.py --model haircolor_gan --dataroot datasets/haircolor --eval --name experiment1
+```
+As described in the previous section, the results of running `test.py` will be saved to `./results/experiment1/test_latest`.
+
