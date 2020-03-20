@@ -31,7 +31,23 @@ We use the [CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ) dat
 
 ### Training
 
-TODO: write this section
+After preparing the data as described above, you can start training the model with the following command:
+```bash
+python train.py --model haircolor_gan --dataroot datasets/haircolor --name experiment1
+```
+Some of the options you may want to change:
+
+`--netG` , `--netD` : network architecture for generator and discriminator. Use `--netG resnet_6blocks` for slightly faster training (default is 9 residual blocks rather than 6). Use `--netD basic`for a PatchGAN discriminator (default is Sigmoid Discriminator).
+
+`--num_colors_to_match` , `--num_mc_drawings` : larger values lead to a greater difference between input hair color and target hair color (on average) in the training examples. Use `--num_mc_drawings 0 --num_colors_to_match 1` to sample input images and target hair colors independently
+
+`--lambda_cyc` `--lambda_identity` : weight that is assigned to reconstruction loss and identity loss.
+
+`--name` you can use any name for the experiment. `experiment1` is just an example. 
+
+To see intermediate results during training, have a look at `./checkpoints/experiment1/web/index.html`.
+
+
 
 ### Testing / Using trained model to translate hair colors
 
