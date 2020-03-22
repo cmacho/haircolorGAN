@@ -50,8 +50,9 @@ class HairColorGANModel(BaseModel):
         self.loss_names = ['D', 'G', 'cycle', 'idt']
         # specify the images you want to save/display. The training/test scripts will call <BaseModel.get_current_visuals>
         self.visual_names = ['real_A','fake_B','target_color']
-        if self.isTrain and self.opt.lambda_identity > 0.0:  # if identity loss is used, we also visualize idt = G(concat(real_B,orig_color_B))
-            self.visual_names = ['real_A','orig_color_A','fake_B','target_color', 'rec_A']                  
+        if self.isTrain:
+            self.visual_names = ['real_A','orig_color_A','fake_B','target_color', 'rec_A']              
+        if self.isTrain and self.opt.lambda_identity > 0.0:  # if identity loss is used, we also visualize idt = G(concat(real_B,orig_color_B))      
             self.visual_names.append('real_B')
             self.visual_names.append('orig_color_B')
             self.visual_names.append('idt')
