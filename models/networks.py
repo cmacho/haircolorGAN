@@ -631,7 +631,7 @@ class SigmoidDiscriminator(nn.Module):
 
         sequence += [nn.Conv2d(ndf * nf_mult, 1, kernel_size=kw, stride=1, padding=padw)]  # output 1 channel prediction map
         
-        sequence += [nn.Flatten(), nn.Linear(900,10), nn.ReLU(),  nn.Linear(10,1), nn.Sigmoid()]
+        sequence += [nn.Flatten(), nn.Linear(900,50), nn.ReLU(),  nn.Linear(50,1), nn.Sigmoid()]
 
         self.model = nn.Sequential(*sequence)
 
