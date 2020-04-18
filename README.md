@@ -6,7 +6,7 @@ We implement a variation of the cycleGAN architecture (described in [this paper]
 
 <img src="imgs/multiple_colors_architecture_v2.png" width="800px"/>
 
-In contrast to the original cycleGAN, it uses only one generator and one discriminator. Both generator and discriminator take hair color labels as additional input. For more details see my [project report](https://cs230.stanford.edu/past-projects/) and [poster](https://cs230.stanford.edu/past-projects/) for the Stanford CS230 class. (hyperlinks to be updated.)
+In contrast to the original cycleGAN, it uses only one generator and one discriminator. Both generator and discriminator take hair color labels as additional input. For more details see my [project report](http://cs230.stanford.edu/projects_winter_2020/reports/32582032.pdf) and [poster](http://cs230.stanford.edu/projects_winter_2020/posters/32582032.pdf) for the Stanford CS230 class. (hyperlinks to be updated.)
 
 Specifically I have added the following files:
 
